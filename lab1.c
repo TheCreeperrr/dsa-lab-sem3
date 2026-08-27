@@ -32,6 +32,17 @@ void delete_position(int n, int *a, int ind){
 	printf("\n");
 }
 
+int search_for(int n, int *a, int num){
+	for (int i=0; i<n; i++){
+		if (a[i]==num){
+			printf("\nFound number %d at index %d\n.", num, i);
+			return i;
+		}
+	}
+	printf("\nCouldn't find the number.\n");
+	return -1;
+}
+
 int main() {
 	int a[10] = {1,2,3,4,5};
 	int n = sizeof(a)/sizeof(a[0]);
@@ -43,6 +54,8 @@ int main() {
 	insert(n, a, 2, 9);
 
 	delete_position(n, a, 2);
+
+	search_for(n, a, 3);
 	
     return 0;
 }
