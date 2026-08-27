@@ -9,15 +9,27 @@ void traverse(int n, int *a){
 void specs(int n, int *a){
     printf("\n\nLength of array: %d elements", n);
 	printf("\nSize of array: %d bytes", (int)sizeof(a[0])*n);
-	printf("\nSize of element: %d bytes", (int)sizeof(a[0]));
+	printf("\nSize of element: %d bytes\n", (int)sizeof(a[0]));
 }
 
 void insert(int n, int *a, int ind, int num){
-    printf("\n\nInserting %d at index %d:\n", num, ind);
-    printf("Before: "); traverse(n, a);
-	for (int i = n; i>ind; i--) a[i] = a[i-1];
+    printf("\nInserting %d at index %d:", num, ind);
+    printf("\nBefore: "); traverse(n, a);
+	for (int i = n-1; i>ind; i--) a[i] = a[i-1];
 	a[ind] = num;
 	printf("\nAfter:  "); traverse(n, a);
+	printf("\n");
+}
+
+void delete_position(int n, int *a, int ind){
+	printf("\nDeleting position %d:", ind);
+	printf("\nBefore: "); traverse(n, a);
+	for (int i=ind; i<n-1; i++){
+		a[i] = a[i+1];
+	}
+	a[n-1] = 0;
+	printf("\nAfter:  "); traverse(n, a);
+	printf("\n");
 }
 
 int main() {
@@ -29,6 +41,8 @@ int main() {
 	specs(n, a);
 	
 	insert(n, a, 2, 9);
+
+	delete_position(n, a, 2);
 	
     return 0;
 }
