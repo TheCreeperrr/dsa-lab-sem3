@@ -59,8 +59,8 @@ int main(){
     cout << "Traversal: ";
     traversal(n, a);
     cout << "\nLinear Search for number 4: Found at index " << linear_search(last_ind, a, 4);
-    cout << "\n\nMininum Number: " << find_min(n, a);
-    cout << "\nMaximum Number: " << find_max(n, a);
+    cout << "\n\nMininum Number: " << find_min(last_ind, a);
+    cout << "\nMaximum Number: " << find_max(last_ind, a);
     
     insert_at_beginning(n, a, 5);
     cout << "\n\nInserting 5 at beginning: ";
@@ -74,7 +74,7 @@ int main(){
     cout << "Inserting at index 3: "; traversal(n, a);
     
     delete_at_pos(n, a, 3);
-    cout << "Deleting index 5: "; traversal(n, a);
+    cout << "Deleting index 3: "; traversal(n, a);
     
     insert_at_end(n, a, last_ind, 7); last_ind++;
     cout << "Insert 7 at end: "; traversal(n, a);
