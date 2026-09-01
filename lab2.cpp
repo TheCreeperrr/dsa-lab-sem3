@@ -52,6 +52,12 @@ void delete_at_end(int n, int a[], int last_ind){
     a[last_ind] = 0;
 }
 
+int sum_of_array(int n, int a[]){
+    int res = 0;
+    for (int i = 0; i < n; i++) res += a[i];
+    return res;
+}
+
 int main(){
     int a[10] = {1,2,3,4,6};
     int n = 10, last_ind = 4;
@@ -81,6 +87,8 @@ int main(){
     
     delete_at_end(n, a, last_ind);
     cout << "Deleting end: "; traversal(n, a);
+    
+    cout << "\n\nSum of array: " << sum_of_array(n, a);
 
     return 0;
 }
