@@ -17,14 +17,14 @@ int linear_search(int last_ind, int a[], int target){
 //Find maximum number in the array
 int find_max(int n, int a[]){
     int res = a[0];
-    for (int i = 0; i < n; i++) res = max(res, a[i]);
+    for (int i = 0; i < n; i++) if (a[i]>res) res = a[i];
     return res;
 }
 
 //Find minimum number in the array
 int find_min(int n, int a[]){
     int res = a[0];
-    for (int i = 0; i < n; i++) res = min(res, a[i]);
+    for (int i = 0; i < n; i++) if (a[i]<res) res = a[i];
     return res;
 }
 
@@ -78,8 +78,8 @@ int main(){
     cout << "Traversal: ";
     traversal(n, a);
     cout << "\nLinear Search for number 4: Found at index " << linear_search(last_ind, a, 4);
-    cout << "\n\nMininum Number: " << find_min(last_ind, a);
-    cout << "\nMaximum Number: " << find_max(last_ind, a);
+    cout << "\n\nMininum Number: " << find_min(last_ind+1, a);
+    cout << "\nMaximum Number: " << find_max(last_ind+1, a);
     
     insert_at_beginning(n, a, 5);
     cout << "\n\nInserting 5 at beginning: ";
@@ -101,7 +101,7 @@ int main(){
     delete_at_end(n, a, last_ind);
     cout << "Deleting end: "; traversal(n, a);
     
-    cout << "\n\nSum of array: " << sum_of_array(n, a);
+    cout << "\nSum of array: " << sum_of_array(n, a);
 
     return 0;
 }
