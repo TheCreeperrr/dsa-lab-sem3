@@ -29,7 +29,7 @@ int pop(){
 }
 
 void peek(){
-    printf("\nThe current top element in stack is: %d", stack[top]);
+    printf("\nThe current top element in stack is: %d\n", stack[top]);
 }
 
 void display(){
